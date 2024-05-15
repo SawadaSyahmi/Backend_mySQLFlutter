@@ -6,6 +6,7 @@ class Counter with ChangeNotifier {
   int _count = 0;
 
   int get count => _count;
+  int get count2 => _count+1;
 
   void increment() {
     _count++;
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
             // Using ChangeNotifierProvider
             Consumer<Counter>(
               builder: (context, counter, child) {
-                return Text('Counter: ${counter.count}', style: TextStyle(fontSize: 24));
+                return Text('Counter: ${counter.count} , ${counter.count2}', style: TextStyle(fontSize: 24));
               },
             ),
             ElevatedButton(
